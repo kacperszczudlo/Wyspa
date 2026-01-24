@@ -1,39 +1,54 @@
 using UnityEngine;
 using System.Collections;
 
-// Dodaje komponent AudioSource, jeśli nie jest obecny
-[RequireComponent (typeof (AudioSource))] 
-
+[RequireComponent (typeof (AudioSource))]
 public class CoconutThrower : MonoBehaviour
 {
-    // Zmienna statyczna pozwalająca na rzucanie kokosami
-    public static bool canThrow = false; 
-
-    // Zmienne publiczne do przypisania w Inspectorze
+    public static bool canThrow = true;
     public AudioClip throwSound;
-    public Rigidbody coconutPrefab; 
-    public float throwSpeed = 30.0f; // <--- Upewnij się, że ta linia kończy się średnikiem (;)
+    public Rigidbody coconutPrefab;
+    public float throwSpeed = 30.0f;
 
     void Update()
     {
-        // Sprawdza, czy naciśnięto i PUSZCZONO przycisk "Fire1" ORAZ czy można rzucać
-        if (Input.GetButtonUp("Fire1") && canThrow) 
+        if (Input.GetButtonUp("Fire1") && canThrow)
         {
-            // Odtwarzanie dźwięku rzutu
-            GetComponent<AudioSource>().PlayOneShot(throwSound);
+            if (coconutPrefab != null)
+            {
+                // 1. Znajdź Główną Kamerę w scenie (Twoje "oczy")
+                Transform cameraTransform = Camera.main.transform;
 
-            // Konkretyzacja (tworzenie) nowego orzecha kokosowego
-            Rigidbody newCoconut = Instantiate(coconutPrefab, transform.position, transform.rotation) as Rigidbody;
+                if (cameraTransform == null)
+                {
+                    Debug.LogError("Nie znaleziono kamery oznaczonej tagiem 'MainCamera'!");
+                    return;
+                }
 
-            // Zmiana nazwy instancji
-            newCoconut.name = "coconut";
+                // 2. Dźwięk
+                AudioSource audio = GetComponent<AudioSource>();
+                if(audio != null && throwSound != null) 
+                    audio.PlayOneShot(throwSound);
 
-            // Nadanie prędkości nowemu orzechowi kokosowemu
-            newCoconut.linearVelocity = transform.forward * throwSpeed;
-            
-            // Opcjonalne ignorowanie kolizji (zostało zakomentowane)
-            // Physics.IgnoreCollision(transform.root.GetComponent<Collider>(),
-            // newCoconut.GetComponent<Collider>(), true); 
+                // 3. POZYCJA STARTOWA:
+                // Bierzemy pozycję kamery i dodajemy 1.5 metra w przód (transform.forward)
+                // Dzięki temu kokos pojawi się przed twarzą, a nie w stopach.
+                Vector3 spawnPos = cameraTransform.position + (cameraTransform.forward * 1.5f);
+                
+                // 4. Stworzenie obiektu
+                Rigidbody newCoconut = Instantiate(coconutPrefab, spawnPos, cameraTransform.rotation) as Rigidbody;
+                newCoconut.name = "coconut";
+
+                // 5. Fizyka (dla Unity 2022 i nowszych)
+                // Ważne: Rzucamy w kierunku, w który patrzy kamera (cameraTransform.forward)
+                newCoconut.linearVelocity = cameraTransform.forward * throwSpeed;
+
+                // 6. Ignorowanie kolizji z graczem (żeby nie odbił się od nas)
+                Collider playerCollider = transform.root.GetComponent<Collider>();
+                if (playerCollider != null)
+                {
+                    Physics.IgnoreCollision(newCoconut.GetComponent<Collider>(), playerCollider, true);
+                }
+            }
         }
     }
 }

@@ -1,12 +1,12 @@
-# 🏝️ Wyspa
+# Wyspa
 
 Projekt gry 3D pierwszoosobowej stworzony w Unity, osadzony w klimatycznej scenerii wyspy. Gra wykorzystuje standardowe zasoby Unity oraz niestandardowe mechaniki do stworzenia immersyjnego doświadczenia eksploracyjnego.
 
-## 📋 O projekcie
+## O projekcie
 
 **Wyspa** to projekt gry FPS (First Person Shooter) z elementami eksploracji, który wykorzystuje Unity Engine do stworzenia interaktywnego środowiska 3D. Projekt zawiera zaawansowane mechaniki sterowania postacią, efekty wizualne oraz system fizyki.
 
-## 🎮 Główne funkcjonalności
+## Główne funkcjonalności
 
 - **First Person Controller** - zaawansowane sterowanie postacią FPP z mechanikami chodzenia, biegu i skakania
 - **System fizyki** - interakcje z obiektami wykorzystujące Rigidbody
@@ -16,14 +16,14 @@ Projekt gry 3D pierwszoosobowej stworzony w Unity, osadzony w klimatycznej scene
 - **Head Bobbing** - efekt kołysania kamery podczas ruchu
 - **FOV Kick** - dynamiczna zmiana pola widzenia podczas biegu
 
-## 🛠️ Technologie
+## Technologie
 
 - **Unity Engine** (C#)
 - Unity Standard Assets
 - Unity Terrain System
 - Unity Water System
 
-## 📁 Struktura projektu
+## Struktura projektu
 
 ```
 Wyspa/
@@ -39,7 +39,7 @@ Wyspa/
 └── Packages/             # Pakiety i zależności
 ```
 
-## 🚀 Uruchomienie projektu
+## Uruchomienie projektu
 
 1. Sklonuj repozytorium:
    ```bash
@@ -52,7 +52,7 @@ Wyspa/
 
 4. Naciśnij Play w edytorze Unity
 
-## 🎯 Sterowanie
+## Sterowanie
 
 - **WASD** - ruch postaci
 - **Shift** - bieg
@@ -60,15 +60,15 @@ Wyspa/
 - **Mysz** - rozglądanie się
 - **ESC** - menu/wyjście z gry
 
-## 📝 Status projektu
+## Status projektu
 
 Projekt jest w fazie rozwoju. Zawiera podstawowe mechaniki rozgrywki oraz środowisko wyspy gotowe do dalszej ekspansji.
 
-## 👤 Autor
+## Autor
 
 **Kacper Szczudło** - [kacperszczudlo](https://github.com/kacperszczudlo)
 
-## 📄 Licencja
+## Licencja
 
 Projekt wykorzystuje Unity Standard Assets, które podlegają licencji Unity Asset Store EULA.
 

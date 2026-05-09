@@ -64,6 +64,52 @@ Wyspa/
 
 Projekt jest w fazie rozwoju. Zawiera podstawowe mechaniki rozgrywki oraz środowisko wyspy gotowe do dalszej ekspansji.
 
+## Przebieg rozgrywki (screeny)
+
+Poniżej krótka historia jednej sesji gry - od eksploracji bazy, przez minigierkę, aż po pościg wilka.
+
+### 1. Start przy bazie
+
+Na początku widzimy główny domek i ognisko. Gracz eksploruje teren i zbiera baterie potrzebne do uruchamiania kolejnych interakcji.
+
+![Start przy bazie - domek i ognisko](docs/screenshots/1ss.png)
+
+### 2. Komunikat o wymaganej liczbie baterii
+
+Przy drzwiach pojawia się informacja, że potrzeba więcej mocy. To kieruje gracza do zadania pobocznego.
+
+![Komunikat o potrzebie zebrania baterii](docs/screenshots/2ss.png)
+
+### 3. Minigra z kokosami
+
+Gracz przechodzi do stanowiska treningowego i strąca kokosy/cele, aby odblokować nagrodę.
+
+![Minigra - zbijanie kokosów](docs/screenshots/3ss.png)
+
+### 4. Nagroda po ukończeniu minigry
+
+Po trafieniu wszystkich celów pojawia się bateria, którą można podnieść i wykorzystać dalej.
+
+![Pojawienie się baterii po minigrze](docs/screenshots/4ss.png)
+
+### 5. Otwarcie drzwi i zdobycie zapałek
+
+Po zebraniu wymaganej energii drzwi dają się otworzyć. W środku gracz znajduje zapałki potrzebne do rozpalenia ogniska.
+
+![Otwarte drzwi i zdobycie zapałek](docs/screenshots/5ss.png)
+
+### 6. Rozpalenie ogniska
+
+Po użyciu zapałek ognisko zaczyna płonąć i świat gry przechodzi do kolejnego etapu.
+
+![Rozpalone ognisko](docs/screenshots/6ss.png)
+
+### 7. Finał - pościg wilka
+
+Po wykonaniu celów aktywuje się zagrożenie: wilk zaczyna gonić gracza po otwartym terenie wyspy.
+
+![Wilk rozpoczyna pościg](docs/screenshots/7ss.png)
+
 ## Autor
 
 **Kacper Szczudło** - [kacperszczudlo](https://github.com/kacperszczudlo)
